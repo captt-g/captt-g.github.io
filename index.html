@@ -20,7 +20,7 @@
   <meta content="Captt-g" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1635253927993" as="style">
+  <link rel="preload" href="/css/style.css?time=1635259053820" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -1658,8 +1658,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1635253927993" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1635253927993"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1635259053820" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1635259053820"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2585,11 +2585,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md' itemprop="articleBody">
     
       
-        用break/continue和标签跳出多重循环只有在循环内部使用才可以调到标签所在位置。
-123456outer: for(...)&#123;    for(...)&#123;       if(...) break outer;//从这里直接运行到alert    &#125;&#125;alert(&#x27;Done!&#x27;)
-
-函数箭头函数
-12let func = ( ...
+        严格模式1&#x27;use strict&#x27;
+用break/continue和标签跳出多重循环只有在循环内部使用才可以调到标签所在位置。
+123456outer: for(...)&#123;    for(...)&#123;       if(...) break outer;//从这里直接运行到alert    &#125;&#125;alert(&#x27;Done!&#x...
       
     
   </div>
@@ -3049,8 +3047,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1635253927993')
-      volantis.js('/js/message.js?time=1635253927993', () => {
+      volantis.css('/css/message.css?time=1635259053820')
+      volantis.js('/js/message.js?time=1635259053820', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3095,8 +3093,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1635253927993')
-      volantis.js('/js/message.js?time=1635253927993', () => {
+      volantis.css('/css/message.css?time=1635259053820')
+      volantis.js('/js/message.js?time=1635259053820', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3155,8 +3153,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1635253927993')
-      volantis.js('/js/message.js?time=1635253927993', () => {
+      volantis.css('/css/message.css?time=1635259053820')
+      volantis.js('/js/message.js?time=1635259053820', () => {
         hideMessage(done);
       });
     } else {
@@ -3311,7 +3309,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1635253927993')
+    volantis.js('/js/rightMenu.js?time=1635259053820')
   </script>
 
 
@@ -3424,19 +3422,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1635253927993")
+        volantis.js("/js/plugins/sites.js?time=1635259053820")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1635253927993")
+        volantis.js("/js/plugins/friends.js?time=1635259053820")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1635253927993")
+        volantis.js("/js/plugins/contributors.js?time=1635259053820")
       }
     
   };
@@ -3552,7 +3550,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1635253927993.js"></script>
+<script src="/js/app.js?time=1635259053820.js"></script>
 
 
 <!-- optional -->
@@ -3630,7 +3628,7 @@ volantis.pjax.push(bindToggleButton);
 
 
   <script>
-  let imgs = ["/img/0x26.jpg","/img/0x30.jpg","/img/0x25.jpg","/img/0x27.jpg","/img/0x28.jpg","/img/0x24.jpg","/img/0x21.jpg","/img/0x29.jpg","/img/0x22.jpg","/img/0x23.jpg"];
+  let imgs = ["/img/0x26.jpg","/img/0x24.jpg","/img/0x29.jpg","/img/0x22.jpg","/img/0x30.jpg","/img/0x27.jpg","/img/0x28.jpg","/img/0x25.jpg","/img/0x21.jpg","/img/0x23.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -3673,7 +3671,7 @@ volantis.pjax.push(bindToggleButton);
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/parallax.js?time=1635253927993').then(()=>{
+    volantis.js('/js/parallax.js?time=1635259053820').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
