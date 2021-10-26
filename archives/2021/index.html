@@ -20,7 +20,7 @@
   <meta content="Captt-g" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1635234128365" as="style">
+  <link rel="preload" href="/css/style.css?time=1635253736884" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -1658,8 +1658,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1635234128365" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1635234128365"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1635253736884" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1635253736884"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2441,8 +2441,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         287. Find the Duplicate Number题目大意：给n+1个int值,1 &lt;= value &lt;= n,找出它们中的重复数字,时间复杂度为O(n^2),空间复杂度为O(1). 
-解决方法：
-
+解决方法：使用二分法,记数组最大值，中值，最小值分别为max，mid，low，如果小于mid的数超过mid个，则重复的数字小于mid，否则大于mid。重复此过程。
+12345678910...
       
     
   </div>
@@ -2509,14 +2509,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md' itemprop="articleBody">
     
       
-        临安春雨初霁（陆游）世味年来薄似纱，谁令骑马客金华。
-小楼一夜听春雨，深巷明朝卖杏花。
-矮纸斜行闲作草，晴窗细乳戏分茶。
-素衣莫起风尘叹，犹及清明可到家。
-
-临江仙·滚滚长江东逝水（杨慎）滚滚长江东逝水，浪花淘尽英雄。是非成败转头空。青山依旧在，几度夕阳红。
-白发渔樵江渚上，惯看秋月春风。一壶浊酒喜相逢。古今多少事，都付笑谈中。
-
+        临安春雨初霁（陆游）世味年来薄似纱，谁令骑马客金华。小楼一夜听春雨，深巷明朝卖杏花。矮纸斜行闲作草，晴窗细乳戏分茶。素衣莫起风尘叹，犹及清明可到家。
+临江仙·滚滚长江东逝水（杨慎）滚滚长江东逝水，浪花淘尽英雄。是非成败转头空。青山依旧在，几度夕阳红。白发渔樵江渚上，惯看秋月春风。一壶浊酒喜相逢。古今多少事，都付笑谈中。
 
 
       
@@ -3041,8 +3035,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1635234128365')
-      volantis.js('/js/message.js?time=1635234128365', () => {
+      volantis.css('/css/message.css?time=1635253736884')
+      volantis.js('/js/message.js?time=1635253736884', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3087,8 +3081,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1635234128365')
-      volantis.js('/js/message.js?time=1635234128365', () => {
+      volantis.css('/css/message.css?time=1635253736884')
+      volantis.js('/js/message.js?time=1635253736884', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3147,8 +3141,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1635234128365')
-      volantis.js('/js/message.js?time=1635234128365', () => {
+      volantis.css('/css/message.css?time=1635253736884')
+      volantis.js('/js/message.js?time=1635253736884', () => {
         hideMessage(done);
       });
     } else {
@@ -3303,7 +3297,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1635234128365')
+    volantis.js('/js/rightMenu.js?time=1635253736884')
   </script>
 
 
@@ -3416,19 +3410,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1635234128365")
+        volantis.js("/js/plugins/sites.js?time=1635253736884")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1635234128365")
+        volantis.js("/js/plugins/friends.js?time=1635253736884")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1635234128365")
+        volantis.js("/js/plugins/contributors.js?time=1635253736884")
       }
     
   };
@@ -3544,7 +3538,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1635234128365.js"></script>
+<script src="/js/app.js?time=1635253736884.js"></script>
 
 
 <!-- optional -->
@@ -3622,7 +3616,7 @@ volantis.pjax.push(bindToggleButton);
 
 
   <script>
-  let imgs = ["/img/0x30.jpg","/img/0x27.jpg","/img/0x24.jpg","/img/0x23.jpg","/img/0x25.jpg","/img/0x29.jpg","/img/0x26.jpg","/img/0x21.jpg","/img/0x22.jpg","/img/0x28.jpg"];
+  let imgs = ["/img/0x24.jpg","/img/0x23.jpg","/img/0x25.jpg","/img/0x30.jpg","/img/0x22.jpg","/img/0x26.jpg","/img/0x27.jpg","/img/0x29.jpg","/img/0x21.jpg","/img/0x28.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -3665,7 +3659,7 @@ volantis.pjax.push(bindToggleButton);
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/parallax.js?time=1635234128365').then(()=>{
+    volantis.js('/js/parallax.js?time=1635253736884').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{

@@ -20,7 +20,7 @@
   <meta content="Captt-g" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1635234128392" as="style">
+  <link rel="preload" href="/css/style.css?time=1635253736910" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -1658,8 +1658,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1635234128392" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1635234128392"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1635253736910" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1635253736910"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2437,8 +2437,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         287. Find the Duplicate Number题目大意：给n+1个int值,1 &lt;= value &lt;= n,找出它们中的重复数字,时间复杂度为O(n^2),空间复杂度为O(1). 
-解决方法：
-
+解决方法：使用二分法,记数组最大值，中值，最小值分别为max，mid，low，如果小于mid的数超过mid个，则重复的数字小于mid，否则大于mid。重复此过程。
+12345678910...
       
     
   </div>
@@ -2838,8 +2838,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1635234128392')
-      volantis.js('/js/message.js?time=1635234128392', () => {
+      volantis.css('/css/message.css?time=1635253736910')
+      volantis.js('/js/message.js?time=1635253736910', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2884,8 +2884,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1635234128392')
-      volantis.js('/js/message.js?time=1635234128392', () => {
+      volantis.css('/css/message.css?time=1635253736910')
+      volantis.js('/js/message.js?time=1635253736910', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -2944,8 +2944,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1635234128392')
-      volantis.js('/js/message.js?time=1635234128392', () => {
+      volantis.css('/css/message.css?time=1635253736910')
+      volantis.js('/js/message.js?time=1635253736910', () => {
         hideMessage(done);
       });
     } else {
@@ -3100,7 +3100,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1635234128392')
+    volantis.js('/js/rightMenu.js?time=1635253736910')
   </script>
 
 
@@ -3213,19 +3213,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1635234128392")
+        volantis.js("/js/plugins/sites.js?time=1635253736910")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1635234128392")
+        volantis.js("/js/plugins/friends.js?time=1635253736910")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1635234128392")
+        volantis.js("/js/plugins/contributors.js?time=1635253736910")
       }
     
   };
@@ -3341,7 +3341,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1635234128392.js"></script>
+<script src="/js/app.js?time=1635253736910.js"></script>
 
 
 <!-- optional -->
@@ -3419,7 +3419,7 @@ volantis.pjax.push(bindToggleButton);
 
 
   <script>
-  let imgs = ["/img/0x26.jpg","/img/0x24.jpg","/img/0x22.jpg","/img/0x25.jpg","/img/0x30.jpg","/img/0x29.jpg","/img/0x28.jpg","/img/0x21.jpg","/img/0x27.jpg","/img/0x23.jpg"];
+  let imgs = ["/img/0x25.jpg","/img/0x21.jpg","/img/0x24.jpg","/img/0x23.jpg","/img/0x22.jpg","/img/0x26.jpg","/img/0x27.jpg","/img/0x29.jpg","/img/0x28.jpg","/img/0x30.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -3462,7 +3462,7 @@ volantis.pjax.push(bindToggleButton);
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/parallax.js?time=1635234128392').then(()=>{
+    volantis.js('/js/parallax.js?time=1635253736910').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
