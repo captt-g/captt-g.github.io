@@ -20,7 +20,7 @@
   <meta content="Captt-g" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1635324671916" as="style">
+  <link rel="preload" href="/css/style.css?time=1635324888786" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -36,7 +36,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-10-27T01:38:37.020Z">
-<meta property="article:modified_time" content="2021-10-27T08:50:05.813Z">
+<meta property="article:modified_time" content="2021-10-27T08:54:42.866Z">
 <meta property="article:author" content="Captt-g">
 <meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary">
@@ -1663,8 +1663,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1635324671916" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1635324671916"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1635324888786" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1635324888786"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2501,10 +2501,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h3 id="信道的极限容量"><a href="#信道的极限容量" class="headerlink" title="信道的极限容量"></a>信道的极限容量</h3><p>传输质量：码元的传输速率越高，或传输的距离越远，或噪声干扰越大，则传输媒体质量越大，失真越严重。</p>
 <p>码间干扰：在接受端收到的信号波形失去了码元之间清晰的界限。</p>
 <h4 id="奈氏准则"><a href="#奈氏准则" class="headerlink" title="奈氏准则"></a>奈氏准则</h4><p>在任何信道中，码元传输的速率是有上限的，传输速率超过此上限，就会出现严重的码间干扰，使接受端识别数据称为不可能。</p>
-<h4 id="信噪比"><a href="#信噪比" class="headerlink" title="信噪比"></a>信噪比</h4><p>定义：信号的平均功率和噪声的平均功率之比，常记为$ S/N $,并用分贝（dB）作为度量单位。即：<br>$$<br>\mbox{信噪比}(dB) = 10 \log_1_0(S/N)(dB)<br>$$</p>
+<h4 id="信噪比"><a href="#信噪比" class="headerlink" title="信噪比"></a>信噪比</h4><p>定义：信号的平均功率和噪声的平均功率之比，常记为$ S/N $,并用分贝（dB）作为度量单位。即：<br>$$<br>\mbox{信噪比}(dB) = 10 \log_{10}(S/N)(dB)<br>$$</p>
 <h5 id="香农公式"><a href="#香农公式" class="headerlink" title="香农公式"></a>香农公式</h5><p>$$<br>C = W \log_2(1+S/N)(bit/s)<br>$$<br>其中 W 为信道带宽，单位为（Hz），C为信道的极限传输速率，香农公式表明，信道的带宽或者信道的信噪比越大，信息的极限传输速率就越高。<br>术语见此</p>
 <h3 id="信道复用技术"><a href="#信道复用技术" class="headerlink" title="信道复用技术"></a>信道复用技术</h3><p>频分复用：相同时间不同频率<br>时分复用：不同时间相同频率，将一个复用帧分为多个时隙，每个时隙分配给一个用户<br>统计时分复用：动态分配的时分复用<br>波分复用：光的频分复用，每隔120km添加一个放大器，可保证光信号不会衰减到不能被识别<br>码分复用：各用户使用经过特殊挑选的不同码型，进行通信。</p>
-<h4 id="码分多址"><a href="#码分多址" class="headerlink" title="码分多址"></a>码分多址</h4><p><strong>特点：</strong>很强的抗干扰能力，频谱类似于白噪声，不易被敌人发现。现在多使用在无线网中。<br><strong>复用方式：</strong>每一个比特时间再划分为m个短的间隔，称为码片，通常m的值为64或者128，使用CDMA的每个站被指派一个唯一的m bit的码片序列，一个站如果要发送1，则发送它自身的码片序列，如果要发送0，则发送自身码片序列的反码。惯例将码片中的0写作-1，将1写作+1.不同的码片序列必须相互正交。<br>因为不同的码片序列之间是相互正交的，设S站的码片序列为S，T站的码片序列为T。<br>$$<br>S * T = 1/m \SigmaS_i T_i = 0<br>$$<br>$$<br>S * S = 1/m \SigmaS_i^2 = 1<br>$$<br>因此如果S发射1，则接受方用$S * S$ 会得到1，如果S发射0，则接受方用$S * S$会得到-1.用此方法，如果接受方有S的码片序列，那么就可以收到A发射的消息。</p>
+<h4 id="码分多址"><a href="#码分多址" class="headerlink" title="码分多址"></a>码分多址</h4><p><strong>特点：</strong>很强的抗干扰能力，频谱类似于白噪声，不易被敌人发现。现在多使用在无线网中。<br><strong>复用方式：</strong>每一个比特时间再划分为m个短的间隔，称为码片，通常m的值为64或者128，使用CDMA的每个站被指派一个唯一的m bit的码片序列，一个站如果要发送1，则发送它自身的码片序列，如果要发送0，则发送自身码片序列的反码。惯例将码片中的0写作-1，将1写作+1.不同的码片序列必须相互正交。<br>因为不同的码片序列之间是相互正交的，设S站的码片序列为S，T站的码片序列为T。<br>$$<br>S * T = 1/m \Sigma S_i T_i = 0<br>$$<br>$$<br>S * S = 1/m \Sigma S_i^2 = 1<br>$$<br>因此如果S发射1，则接受方用$S * S$ 会得到1，如果S发射0，则接受方用$S * S$会得到-1.用此方法，如果接受方有S的码片序列，那么就可以收到A发射的消息。</p>
 </div><h2 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h2><div class="story post-story">
 </div>
   </div>
@@ -2537,7 +2537,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-10-27T16:50:05+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-10-27T16:54:42+08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年10月27日</p>
@@ -2842,8 +2842,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1635324671916')
-      volantis.js('/js/message.js?time=1635324671916', () => {
+      volantis.css('/css/message.css?time=1635324888786')
+      volantis.js('/js/message.js?time=1635324888786', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2888,8 +2888,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1635324671916')
-      volantis.js('/js/message.js?time=1635324671916', () => {
+      volantis.css('/css/message.css?time=1635324888786')
+      volantis.js('/js/message.js?time=1635324888786', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -2948,8 +2948,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1635324671916')
-      volantis.js('/js/message.js?time=1635324671916', () => {
+      volantis.css('/css/message.css?time=1635324888786')
+      volantis.js('/js/message.js?time=1635324888786', () => {
         hideMessage(done);
       });
     } else {
@@ -3104,7 +3104,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1635324671916')
+    volantis.js('/js/rightMenu.js?time=1635324888786')
   </script>
 
 
@@ -3217,19 +3217,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1635324671916")
+        volantis.js("/js/plugins/sites.js?time=1635324888786")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1635324671916")
+        volantis.js("/js/plugins/friends.js?time=1635324888786")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1635324671916")
+        volantis.js("/js/plugins/contributors.js?time=1635324888786")
       }
     
   };
@@ -3345,7 +3345,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1635324671916.js"></script>
+<script src="/js/app.js?time=1635324888786.js"></script>
 
 
 <!-- optional -->
@@ -3423,7 +3423,7 @@ volantis.pjax.push(bindToggleButton);
 
 
   <script>
-  let imgs = ["/img/0x26.jpg","/img/0x24.jpg","/img/0x27.jpg","/img/0x28.jpg","/img/0x22.jpg","/img/0x25.jpg","/img/0x30.jpg","/img/0x23.jpg","/img/0x29.jpg","/img/0x21.jpg"];
+  let imgs = ["/img/0x24.jpg","/img/0x29.jpg","/img/0x22.jpg","/img/0x23.jpg","/img/0x27.jpg","/img/0x28.jpg","/img/0x21.jpg","/img/0x25.jpg","/img/0x26.jpg","/img/0x30.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -3466,7 +3466,7 @@ volantis.pjax.push(bindToggleButton);
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/parallax.js?time=1635324671916').then(()=>{
+    volantis.js('/js/parallax.js?time=1635324888786').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -3714,7 +3714,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Captt-g","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Captt-g","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Captt-g"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/计算机网络/","name":"计算机网络"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021/10/27/计算机世界/WireLine/","name":"计算机网络"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"计算机网络","description":"","datePublished":"2021-10-27T01:38:37.020Z","dateModified":"2021-10-27T08:50:05.813Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/10/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C/WireLine/"},"author":{"@type":"Person","name":"Captt-g","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Captt-g","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021/10/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C/WireLine/","wordCount":0,"articleSection":"计算机网络","keywords":"计算机网络","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Captt-g","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Captt-g","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Captt-g"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/计算机网络/","name":"计算机网络"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021/10/27/计算机世界/WireLine/","name":"计算机网络"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"计算机网络","description":"","datePublished":"2021-10-27T01:38:37.020Z","dateModified":"2021-10-27T08:54:42.866Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/10/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C/WireLine/"},"author":{"@type":"Person","name":"Captt-g","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Captt-g","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021/10/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C/WireLine/","wordCount":0,"articleSection":"计算机网络","keywords":"计算机网络","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
