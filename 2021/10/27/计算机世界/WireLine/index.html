@@ -20,7 +20,7 @@
   <meta content="Captt-g" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1635401128589" as="style">
+  <link rel="preload" href="/css/style.css?time=1635479336347" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -36,7 +36,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-10-27T01:38:37.020Z">
-<meta property="article:modified_time" content="2021-10-27T09:08:00.012Z">
+<meta property="article:modified_time" content="2021-10-29T03:48:44.471Z">
 <meta property="article:author" content="Captt-g">
 <meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary">
@@ -1663,8 +1663,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1635401128589" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1635401128589"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1635479336347" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1635479336347"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2507,7 +2507,30 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <h3 id="信道复用技术"><a href="#信道复用技术" class="headerlink" title="信道复用技术"></a>信道复用技术</h3><p>频分复用：相同时间不同频率<br>时分复用：不同时间相同频率，将一个复用帧分为多个时隙，每个时隙分配给一个用户<br>统计时分复用：动态分配的时分复用<br>波分复用：光的频分复用，每隔120km添加一个放大器，可保证光信号不会衰减到不能被识别<br>码分复用：各用户使用经过特殊挑选的不同码型，进行通信。</p>
 <h4 id="码分多址"><a href="#码分多址" class="headerlink" title="码分多址"></a>码分多址</h4><p><strong>特点：</strong>很强的抗干扰能力，频谱类似于白噪声，不易被敌人发现。现在多使用在无线网中。<br><strong>复用方式：</strong>每一个比特时间再划分为m个短的间隔，称为码片，通常m的值为64或者128，使用CDMA的每个站被指派一个唯一的m bit的码片序列，一个站如果要发送1，则发送它自身的码片序列，如果要发送0，则发送自身码片序列的反码。惯例将码片中的0写作-1，将1写作+1.不同的码片序列必须相互正交。<br>因为不同的码片序列之间是相互正交的，设S站的码片序列为S，T站的码片序列为T。<br>$$<br>S * T = 1/m \Sigma S_i T_i = 0<br>$$<br>$$<br>S * S = 1/m \Sigma S_i^2 = 1<br>$$<br>因此如果S发射1，则接受方用$S * S$ 会得到1，如果S发射0，则接受方用$S * S$会得到-1.用此方法，如果接受方有S的码片序列，那么就可以收到A发射的消息。</p>
-</div><h2 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h2><div class="story post-story">
+</div><h2 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h2><div class="story post-story"><h3 id="主要内容："><a href="#主要内容：" class="headerlink" title="主要内容："></a>主要内容：</h3><ol>
+<li>点对点信道和广播信道的特点，以及这两种信道所使用的协议的特点(PPP 协议一节 CSMA/CD 协议)。</li>
+<li>数据链路层的三个基本问题：封装成帧，透明传输和差错检验。</li>
+<li>以太网MAC层的硬件地址</li>
+<li>适配器、转发器、集线器、网桥、以太网交换机的作用以及使用场合。</li>
+</ol>
+<h3 id="使用点对点信道的数据链路层"><a href="#使用点对点信道的数据链路层" class="headerlink" title="使用点对点信道的数据链路层"></a>使用点对点信道的数据链路层</h3><p>数据链路和链路的区别：</p>
+<ul>
+<li>链路：是从一个结点到相邻结点的一段物理线路（有线或者无线），而中间没有任何其他的交换结点。</li>
+<li>数据链路：把视线协议的硬件和软件加到链路上，就构成了数据链路。</li>
+</ul>
+<p>数据链路层的协议数据单元：帧<br>网络层的协议数据单元：IP数据报</p>
+<p>点对点信道的数据链路层在进行通行的时候主要步骤：</p>
+<ol>
+<li>结点A的数据链路层把网络层传下来的数据封装成帧</li>
+<li>结点A把帧传输给结点B的数据链路层</li>
+<li>结点B检验帧无差错，接受帧，否则丢弃帧</li>
+</ol>
+<h4 id="封装成帧"><a href="#封装成帧" class="headerlink" title="封装成帧"></a>封装成帧</h4><p>在一段数据的前后分别添加首部和尾部，构成一个帧。首部SOH(Start Of Header),尾部EOT(End Of Transmission)是两种控制字符，并不是三个字符，在键盘中都不可输入。用于帧定界。</p>
+<h4 id="透明传输"><a href="#透明传输" class="headerlink" title="透明传输"></a>透明传输</h4><p>保证数据的完整性不因为数据中含有和定界符而在传输中丢失。</p>
+<p>具体做法：发送端的数据链路层在数据中出现控制字符”SOH”,”EOT”,”ESC”的前面添加一个转移字符”ESC”，而在接受端的数据链路层删除这个转义字符，这种方法称为字符填充或者字节填充（byte stuffing）。</p>
+<h4 id="差错检验"><a href="#差错检验" class="headerlink" title="差错检验"></a>差错检验</h4><p>误码率：传输错误bit数占传输bit总数的比率<br>CRC(Cyclic Redundancy Check)循环冗余检验技术被广泛用于数据链路层差错检验。<br>检验方法：<br>$$<br>(M<em>2^n)/P=Q…R<br>$$<br>发送$M</em>2^n+R$,接收方把每一帧都除以P，若余数为零则代表没有出现差错，否则代表出现差错，该式子中所有的除法均代表模二除法。其中P是n+1位二进制数，R是n位二进制数，被称作FCS(Frame Check Sequence)(冗余码，帧检验序列)。</p>
+<p>CRC只能检测出bit差错，所以并不能进行可靠传输，如果想进行可靠传输，还需要增加帧编号，确认和重传机制，防止帧丢失，帧重复，帧失序。</p>
+
 </div>
   </div>
   
@@ -2539,10 +2562,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-10-27T17:08:00+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-10-29T11:48:44+08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年10月27日</p>
+    <p>更新于：2021年10月29日</p>
   </a>
 </div>
 
@@ -2682,7 +2705,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%B1%82"><span class="toc-text">物理层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%B1%82%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">物理层基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%B1%82%E7%9A%84%E4%BB%BB%E5%8A%A1%EF%BC%9A"><span class="toc-text">物理层的任务：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86"><span class="toc-text">数据通信的基本知识</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%EF%BC%9A"><span class="toc-text">数据通信系统：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%9C%AF%E8%AF%AD%EF%BC%9A"><span class="toc-text">常用术语：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E4%BF%A1%E9%81%93%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%EF%BC%9A"><span class="toc-text">关于信道的基本概念：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B0%83%E5%88%B6%EF%BC%9A"><span class="toc-text">调制：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="toc-text">常用的编码方式：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%B8%A6%E9%80%9A%E8%B0%83%E5%88%B6%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-text">基本的带通调制方法：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E9%81%93%E7%9A%84%E6%9E%81%E9%99%90%E5%AE%B9%E9%87%8F"><span class="toc-text">信道的极限容量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A5%88%E6%B0%8F%E5%87%86%E5%88%99"><span class="toc-text">奈氏准则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E5%99%AA%E6%AF%94"><span class="toc-text">信噪比</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A6%99%E5%86%9C%E5%85%AC%E5%BC%8F"><span class="toc-text">香农公式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E9%81%93%E5%A4%8D%E7%94%A8%E6%8A%80%E6%9C%AF"><span class="toc-text">信道复用技术</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A0%81%E5%88%86%E5%A4%9A%E5%9D%80"><span class="toc-text">码分多址</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82"><span class="toc-text">数据链路层</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%B1%82"><span class="toc-text">物理层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%B1%82%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">物理层基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%B1%82%E7%9A%84%E4%BB%BB%E5%8A%A1%EF%BC%9A"><span class="toc-text">物理层的任务：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86"><span class="toc-text">数据通信的基本知识</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%EF%BC%9A"><span class="toc-text">数据通信系统：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%9C%AF%E8%AF%AD%EF%BC%9A"><span class="toc-text">常用术语：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E4%BF%A1%E9%81%93%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%EF%BC%9A"><span class="toc-text">关于信道的基本概念：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B0%83%E5%88%B6%EF%BC%9A"><span class="toc-text">调制：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="toc-text">常用的编码方式：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%B8%A6%E9%80%9A%E8%B0%83%E5%88%B6%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-text">基本的带通调制方法：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E9%81%93%E7%9A%84%E6%9E%81%E9%99%90%E5%AE%B9%E9%87%8F"><span class="toc-text">信道的极限容量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A5%88%E6%B0%8F%E5%87%86%E5%88%99"><span class="toc-text">奈氏准则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E5%99%AA%E6%AF%94"><span class="toc-text">信噪比</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A6%99%E5%86%9C%E5%85%AC%E5%BC%8F"><span class="toc-text">香农公式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E9%81%93%E5%A4%8D%E7%94%A8%E6%8A%80%E6%9C%AF"><span class="toc-text">信道复用技术</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A0%81%E5%88%86%E5%A4%9A%E5%9D%80"><span class="toc-text">码分多址</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82"><span class="toc-text">数据链路层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9%EF%BC%9A"><span class="toc-text">主要内容：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%82%B9%E5%AF%B9%E7%82%B9%E4%BF%A1%E9%81%93%E7%9A%84%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82"><span class="toc-text">使用点对点信道的数据链路层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E6%88%90%E5%B8%A7"><span class="toc-text">封装成帧</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%8F%E6%98%8E%E4%BC%A0%E8%BE%93"><span class="toc-text">透明传输</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%AE%E9%94%99%E6%A3%80%E9%AA%8C"><span class="toc-text">差错检验</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
@@ -2850,8 +2873,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1635401128589')
-      volantis.js('/js/message.js?time=1635401128589', () => {
+      volantis.css('/css/message.css?time=1635479336347')
+      volantis.js('/js/message.js?time=1635479336347', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2896,8 +2919,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1635401128589')
-      volantis.js('/js/message.js?time=1635401128589', () => {
+      volantis.css('/css/message.css?time=1635479336347')
+      volantis.js('/js/message.js?time=1635479336347', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -2956,8 +2979,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1635401128589')
-      volantis.js('/js/message.js?time=1635401128589', () => {
+      volantis.css('/css/message.css?time=1635479336347')
+      volantis.js('/js/message.js?time=1635479336347', () => {
         hideMessage(done);
       });
     } else {
@@ -3112,7 +3135,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1635401128589')
+    volantis.js('/js/rightMenu.js?time=1635479336347')
   </script>
 
 
@@ -3225,19 +3248,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1635401128589")
+        volantis.js("/js/plugins/sites.js?time=1635479336347")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1635401128589")
+        volantis.js("/js/plugins/friends.js?time=1635479336347")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1635401128589")
+        volantis.js("/js/plugins/contributors.js?time=1635479336347")
       }
     
   };
@@ -3353,7 +3376,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1635401128589.js"></script>
+<script src="/js/app.js?time=1635479336347.js"></script>
 
 
 <!-- optional -->
@@ -3431,7 +3454,7 @@ volantis.pjax.push(bindToggleButton);
 
 
   <script>
-  let imgs = ["/img/0x27.jpg","/img/0x24.jpg","/img/0x30.jpg","/img/0x26.jpg","/img/0x21.jpg","/img/0x29.jpg","/img/0x23.jpg","/img/0x22.jpg","/img/0x25.jpg","/img/0x28.jpg"];
+  let imgs = ["/img/0x28.jpg","/img/0x27.jpg","/img/0x22.jpg","/img/0x21.jpg","/img/0x24.jpg","/img/0x30.jpg","/img/0x23.jpg","/img/0x26.jpg","/img/0x29.jpg","/img/0x25.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -3474,7 +3497,7 @@ volantis.pjax.push(bindToggleButton);
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/parallax.js?time=1635401128589').then(()=>{
+    volantis.js('/js/parallax.js?time=1635479336347').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -3722,7 +3745,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Captt-g","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Captt-g","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Captt-g"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/计算机网络/","name":"计算机网络"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021/10/27/计算机世界/WireLine/","name":"计算机网络"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"计算机网络","description":"","datePublished":"2021-10-27T01:38:37.020Z","dateModified":"2021-10-27T09:08:00.012Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/10/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C/WireLine/"},"author":{"@type":"Person","name":"Captt-g","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Captt-g","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021/10/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C/WireLine/","wordCount":0,"articleSection":"计算机网络","keywords":"计算机网络","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Captt-g","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Captt-g","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Captt-g"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/计算机网络/","name":"计算机网络"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021/10/27/计算机世界/WireLine/","name":"计算机网络"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"计算机网络","description":"","datePublished":"2021-10-27T01:38:37.020Z","dateModified":"2021-10-29T03:48:44.471Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/10/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C/WireLine/"},"author":{"@type":"Person","name":"Captt-g","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Captt-g","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021/10/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C/WireLine/","wordCount":0,"articleSection":"计算机网络","keywords":"计算机网络","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
