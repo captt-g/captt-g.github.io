@@ -20,23 +20,23 @@
   <meta content="Captt-g" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1635775254124" as="style">
+  <link rel="preload" href="/css/style.css?time=1635775313475" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
   <title>用c++完成mac封装实验 - Captt-g</title>
   <meta name="keywords" content="计算机网络,null">
-  <meta name="description" content="MAC帧封装在终端输入数据，输出MAC帧包装后的相关信息。仅考虑单帧 MAC帧基本格式   前导码 帧定界符 目的地址 源地址 长度字段 数据字段 校验字段    7B 1B (6B) (6B) (2B) 46~1500字节 (4B)   题目条件目的地址：8000FF602CDC源地址：8000FE853A5F生成多项式： $$G(x)&#x3D;x^32+x^26+x^23+x^22+x^16+x^12">
+  <meta name="description" content="MAC帧封装在终端输入数据，输出MAC帧包装后的相关信息。仅考虑单帧 MAC帧基本格式   前导码 帧定界符 目的地址 源地址 长度字段 数据字段 校验字段    7B 1B (6B) (6B) (2B) 46~1500字节 (4B)   题目条件目的地址：8000FF602CDC源地址：8000FE853A5F生成多项式： $$G(x)&#x3D;x^{32}+x^{26}+x^{23}+x^{22}+x">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用c++完成mac封装实验">
 <meta property="og:url" content="http://example.com/2021/11/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C/mac%E5%B0%81%E8%A3%85/index.html">
 <meta property="og:site_name" content="Captt-g">
-<meta property="og:description" content="MAC帧封装在终端输入数据，输出MAC帧包装后的相关信息。仅考虑单帧 MAC帧基本格式   前导码 帧定界符 目的地址 源地址 长度字段 数据字段 校验字段    7B 1B (6B) (6B) (2B) 46~1500字节 (4B)   题目条件目的地址：8000FF602CDC源地址：8000FE853A5F生成多项式： $$G(x)&#x3D;x^32+x^26+x^23+x^22+x^16+x^12">
+<meta property="og:description" content="MAC帧封装在终端输入数据，输出MAC帧包装后的相关信息。仅考虑单帧 MAC帧基本格式   前导码 帧定界符 目的地址 源地址 长度字段 数据字段 校验字段    7B 1B (6B) (6B) (2B) 46~1500字节 (4B)   题目条件目的地址：8000FF602CDC源地址：8000FE853A5F生成多项式： $$G(x)&#x3D;x^{32}+x^{26}+x^{23}+x^{22}+x">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-11-01T13:28:55.175Z">
-<meta property="article:modified_time" content="2021-11-01T14:00:46.679Z">
+<meta property="article:modified_time" content="2021-11-01T14:01:46.709Z">
 <meta property="article:author" content="Captt-g">
 <meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary">
@@ -1663,8 +1663,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1635775254124" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1635775254124"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1635775313475" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1635775313475"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2497,7 +2497,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </tr>
 </tbody></table>
 <h4 id="题目条件"><a href="#题目条件" class="headerlink" title="题目条件"></a>题目条件</h4><p>目的地址：8000FF602CDC<br>源地址：8000FE853A5F<br>生成多项式：</p>
-<p>$$<br>G(x)=x^32+x^26+x^23+x^22+x^16+x^12+x^11+x^10+x^8+x^7+x^5+x^4+x^2+x+1<br>$$</p>
+<p>$$<br>G(x)=x^{32}+x^{26}+x^{23}+x^{22}+x^{16}+x^{12}+x^{11}+x^{10}+x^8+x^7+x^5+x^4+x^2+x+1<br>$$</p>
 <h4 id="程序思路"><a href="#程序思路" class="headerlink" title="程序思路"></a>程序思路</h4><ol>
 <li>先通过已给条件填充数据的目的地址，原地址，数据字段，长度字段。</li>
 <li>根据crc-32校验不包括前导码和定界符，通过已有数据计算出冗余码添加到mac末尾。</li>
@@ -2539,7 +2539,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-11-01T22:00:46+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-11-01T22:01:46+08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年11月1日</p>
@@ -2845,8 +2845,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1635775254124')
-      volantis.js('/js/message.js?time=1635775254124', () => {
+      volantis.css('/css/message.css?time=1635775313475')
+      volantis.js('/js/message.js?time=1635775313475', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2891,8 +2891,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1635775254124')
-      volantis.js('/js/message.js?time=1635775254124', () => {
+      volantis.css('/css/message.css?time=1635775313475')
+      volantis.js('/js/message.js?time=1635775313475', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -2951,8 +2951,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1635775254124')
-      volantis.js('/js/message.js?time=1635775254124', () => {
+      volantis.css('/css/message.css?time=1635775313475')
+      volantis.js('/js/message.js?time=1635775313475', () => {
         hideMessage(done);
       });
     } else {
@@ -3107,7 +3107,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1635775254124')
+    volantis.js('/js/rightMenu.js?time=1635775313475')
   </script>
 
 
@@ -3220,19 +3220,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1635775254124")
+        volantis.js("/js/plugins/sites.js?time=1635775313475")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1635775254124")
+        volantis.js("/js/plugins/friends.js?time=1635775313475")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1635775254124")
+        volantis.js("/js/plugins/contributors.js?time=1635775313475")
       }
     
   };
@@ -3348,7 +3348,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1635775254124.js"></script>
+<script src="/js/app.js?time=1635775313475.js"></script>
 
 
 <!-- optional -->
@@ -3426,7 +3426,7 @@ volantis.pjax.push(bindToggleButton);
 
 
   <script>
-  let imgs = ["/img/0x21.jpg","/img/0x29.jpg","/img/0x28.jpg","/img/0x23.jpg","/img/0x24.jpg","/img/0x22.jpg","/img/0x25.jpg","/img/0x30.jpg","/img/0x27.jpg","/img/0x26.jpg"];
+  let imgs = ["/img/0x27.jpg","/img/0x21.jpg","/img/0x23.jpg","/img/0x24.jpg","/img/0x26.jpg","/img/0x22.jpg","/img/0x28.jpg","/img/0x25.jpg","/img/0x30.jpg","/img/0x29.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -3469,7 +3469,7 @@ volantis.pjax.push(bindToggleButton);
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/parallax.js?time=1635775254124').then(()=>{
+    volantis.js('/js/parallax.js?time=1635775313475').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -3717,7 +3717,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Captt-g","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Captt-g","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Captt-g"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/计算机网络/","name":"计算机网络"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021/11/01/计算机世界/mac封装/","name":"用c++完成mac封装实验"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"用c++完成mac封装实验","description":"","datePublished":"2021-11-01T13:28:55.175Z","dateModified":"2021-11-01T14:00:46.679Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/11/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C/mac%E5%B0%81%E8%A3%85/"},"author":{"@type":"Person","name":"Captt-g","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Captt-g","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021/11/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C/mac%E5%B0%81%E8%A3%85/","wordCount":0,"articleSection":"计算机网络","keywords":"计算机网络","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Captt-g","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Captt-g","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Captt-g"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/计算机网络/","name":"计算机网络"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021/11/01/计算机世界/mac封装/","name":"用c++完成mac封装实验"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"用c++完成mac封装实验","description":"","datePublished":"2021-11-01T13:28:55.175Z","dateModified":"2021-11-01T14:01:46.709Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/11/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C/mac%E5%B0%81%E8%A3%85/"},"author":{"@type":"Person","name":"Captt-g","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Captt-g","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021/11/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C/mac%E5%B0%81%E8%A3%85/","wordCount":0,"articleSection":"计算机网络","keywords":"计算机网络","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
