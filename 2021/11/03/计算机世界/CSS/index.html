@@ -20,7 +20,7 @@
   <meta content="Captt-g" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1636034387082" as="style">
+  <link rel="preload" href="/css/style.css?time=1636034760443" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -36,7 +36,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-11-03T14:27:04.895Z">
-<meta property="article:modified_time" content="2021-11-04T13:59:33.361Z">
+<meta property="article:modified_time" content="2021-11-04T14:05:47.806Z">
 <meta property="article:author" content="Captt-g">
 <meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary">
@@ -1663,8 +1663,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1636034387082" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1636034387082"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1636034760443" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1636034760443"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2479,22 +2479,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>内嵌样式表：在head中采用<code>&lt;style&gt;</code>标签，针对 此页面</li>
 <li>引入外部样式表css文件：<ol>
 <li>采用import，必须写在style标签中，且必须是第一句，eg:@import url(c.css),可以在css样式表中使用</li>
-<li>采用link，eg:<code>&lt;link rel=&quot;stylesheet&quot; type:&quot;text/css&quot; href=&quot;a.css&quot;&gt;&lt;/link&gt;</code> </li>
+<li>采用link，eg:<code>&lt;link rel=&quot;stylesheet&quot; type:&quot;text/css&quot; href=&quot;a.css&quot;&gt;&lt;/link&gt;</code> <h3 id="的选择器"><a href="#的选择器" class="headerlink" title="的选择器"></a>的选择器</h3><h4 id="基本选择器："><a href="#基本选择器：" class="headerlink" title="基本选择器："></a>基本选择器：</h4></li>
 </ol>
 </li>
-</ul>
-<h3 id="的选择器"><a href="#的选择器" class="headerlink" title="的选择器"></a>的选择器</h3><h4 id="基本选择器："><a href="#基本选择器：" class="headerlink" title="基本选择器："></a>基本选择器：</h4><ul>
 <li>标签选择器：针对一类标签</li>
 <li>id选择器：针对特定标签，#定义</li>
 <li>类选择器：针对所有标签，.定义</li>
-<li>通用选择器：针对所有标签，*定义<br>id通常为js使用，所以css一般不用id，而是使用类选择，同时一般认为带有id的标签是动态的。</li>
-</ul>
-<h4 id="高级选择器"><a href="#高级选择器" class="headerlink" title="高级选择器"></a>高级选择器</h4><ul>
+<li>通用选择器：针对所有标签，*定义<br>id通常为js使用，所以css一般不用id，而是使用类选择，同时一般认为带有id的标签是动态的。<h4 id="高级选择器"><a href="#高级选择器" class="headerlink" title="高级选择器"></a>高级选择器</h4></li>
 <li>后代选择器：用空格分开，eg: div div b,选择div中的有b字段的div的b字段</li>
 <li>交集选择器：h3.special或者h3#special,.代表special类，#代表special id。</li>
-<li>并集选择器：用,隔开eg：<code>p,h1,#titles,.one</code>选择p字段和h1字段和title id,和one类</li>
+<li>并集选择器：用,隔开eg：<code>p,h1,#titles,.one</code>选择p字段和h1字段和title id,和one类<h4 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h4></li>
 </ul>
-<h4 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h4><ol>
+<ol>
 <li>静态伪类：</li>
 </ol>
 <ul>
@@ -2512,27 +2508,27 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">	<span class="comment">/*让超链接点击之前是红色*/</span></span><br><span class="line">	<span class="selector-tag">a</span><span class="selector-pseudo">:link</span>&#123;</span><br><span class="line">		<span class="attribute">color</span>:red;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*让超链接点击之后是绿色*/</span></span><br><span class="line">	<span class="selector-tag">a</span><span class="selector-pseudo">:visited</span>&#123;</span><br><span class="line">		<span class="attribute">color</span>:orange;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*鼠标悬停，放到标签上的时候*/</span></span><br><span class="line">	<span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">		<span class="attribute">color</span>:green;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*鼠标点击链接，但是不松手的时候*/</span></span><br><span class="line">	<span class="selector-tag">a</span><span class="selector-pseudo">:active</span>&#123;</span><br><span class="line">		<span class="attribute">color</span>:black;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
 <p>必须按照顺序，否则会失效</p>
 </div><h2 id="font字体属性"><a href="#font字体属性" class="headerlink" title="font字体属性"></a>font字体属性</h2><div class="story post-story"><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;  </span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">50px</span>; 		<span class="comment">/*字体大小*/</span></span><br><span class="line">	<span class="attribute">line-height</span>: <span class="number">30px</span>;      <span class="comment">/*行高*/</span></span><br><span class="line">	<span class="attribute">font-family</span>: 幼圆,黑体; 	<span class="comment">/*字体类型：如果没有幼圆就显示黑体，没有黑体就显示默认*/</span></span><br><span class="line">	<span class="attribute">font-style</span>: italic ;		<span class="comment">/*italic表示斜体，normal表示不倾斜*/</span></span><br><span class="line">	<span class="attribute">font-weight</span>: bold;	<span class="comment">/*粗体*/</span></span><br><span class="line">	<span class="attribute">font-variant</span>: small-caps;  <span class="comment">/*小写变大写*/</span></span><br><span class="line">    <span class="attribute">vertical-align</span>:middle; <span class="comment">/*指定行级元素的垂直对齐方式*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 </div><h2 id="overflow-属性"><a href="#overflow-属性" class="headerlink" title="overflow 属性"></a>overflow 属性</h2><div class="story post-story"><p>处理超出范围的内容</p>
 <ul>
 <li>visible：默认，全部显示</li>
 <li>hidden：不显示超过对象尺寸的内容</li>
-<li>auto： 如果内容不超出，不显示滚动条，否则显示滚动条。</li>
-</ul>
-</div><h2 id="鼠标属性"><a href="#鼠标属性" class="headerlink" title="鼠标属性"></a>鼠标属性</h2><div class="story post-story"><ul>
+<li>auto： 如果内容不超出，不显示滚动条，否则显示滚动条。</div><h2 id="鼠标属性"><a href="#鼠标属性" class="headerlink" title="鼠标属性"></a>鼠标属性</h2><div class="story post-story"></li>
 <li>auto:默认值。浏览器根据当前情况自动确定鼠标光标类型</li>
-<li>pointer: 竖起一根手指的图标，鼠标在超链接上的图标<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">    <span class="attribute">cursor</span>:pointer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</div><h2 id="滤镜"><a href="#滤镜" class="headerlink" title="滤镜"></a>滤镜</h2><div class="story post-story"><p>可以对图片使用滤镜</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;xxx.jpg&quot;</span> <span class="attr">style</span>=<span class="string">&quot;filter:gray()&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-</div><h2 id="css样式表的继承性"><a href="#css样式表的继承性" class="headerlink" title="css样式表的继承性"></a>css样式表的继承性</h2><div class="story post-story"><ul>
+<li>pointer: 竖起一根手指的图标，鼠标在超链接上的图标<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">    <span class="attribute">cursor</span>:pointer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</div><h2 id="滤镜"><a href="#滤镜" class="headerlink" title="滤镜"></a>滤镜</h2><div class="story post-story">可以对图片使用滤镜<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;xxx.jpg&quot;</span> <span class="attr">style</span>=<span class="string">&quot;filter:gray()&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</div><h2 id="css样式表的继承性"><a href="#css样式表的继承性" class="headerlink" title="css样式表的继承性"></a>css样式表的继承性</h2><div class="story post-story"></li>
 <li>选择上了，数权重，(id的数量，类的数量，标签的数量)。如果权重一样，谁写在后面听谁的。</li>
 <li>没有选择上，通过继承影响的，就近原则，谁描述的近听谁的。如果描述的一样近，比如选择器权重，如果权重再一样重，谁写在后面听谁的。</li>
 </ul>
 <p>可以通过在属性后面添加!important增加权重到无穷大</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">k:v <span class="meta">!important</span>;</span><br></pre></td></tr></table></figure>
 <p>但important无法提升继承的权重</p>
+</div><h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><div class="story post-story"><h3 id="主要属性"><a href="#主要属性" class="headerlink" title="主要属性"></a>主要属性</h3><ul>
+<li>width和height</li>
+<li>padding：内边距</li>
+<li>border：边框</li>
+<li>margin：外边距</li>
+</ul>
 
 </div>
   </div>
@@ -2565,7 +2561,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-11-04T21:59:33+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-11-04T22:05:47+08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年11月4日</p>
@@ -2705,7 +2701,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-text">语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS%E5%92%8CHtml%E7%9A%84%E7%BB%93%E5%90%88%E6%96%B9%E5%BC%8F"><span class="toc-text">CSS和Html的结合方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9A%84%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">的选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8%EF%BC%9A"><span class="toc-text">基本选择器：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AB%98%E7%BA%A7%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">高级选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">伪类选择器</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#font%E5%AD%97%E4%BD%93%E5%B1%9E%E6%80%A7"><span class="toc-text">font字体属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#overflow-%E5%B1%9E%E6%80%A7"><span class="toc-text">overflow 属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BC%A0%E6%A0%87%E5%B1%9E%E6%80%A7"><span class="toc-text">鼠标属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BB%A4%E9%95%9C"><span class="toc-text">滤镜</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E6%A0%B7%E5%BC%8F%E8%A1%A8%E7%9A%84%E7%BB%A7%E6%89%BF%E6%80%A7"><span class="toc-text">css样式表的继承性</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-text">语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS%E5%92%8CHtml%E7%9A%84%E7%BB%93%E5%90%88%E6%96%B9%E5%BC%8F"><span class="toc-text">CSS和Html的结合方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9A%84%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">的选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8%EF%BC%9A"><span class="toc-text">基本选择器：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AB%98%E7%BA%A7%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">高级选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">伪类选择器</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#font%E5%AD%97%E4%BD%93%E5%B1%9E%E6%80%A7"><span class="toc-text">font字体属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#overflow-%E5%B1%9E%E6%80%A7"><span class="toc-text">overflow 属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BC%A0%E6%A0%87%E5%B1%9E%E6%80%A7"><span class="toc-text">鼠标属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BB%A4%E9%95%9C"><span class="toc-text">滤镜</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E6%A0%B7%E5%BC%8F%E8%A1%A8%E7%9A%84%E7%BB%A7%E6%89%BF%E6%80%A7"><span class="toc-text">css样式表的继承性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B"><span class="toc-text">盒子模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%B1%9E%E6%80%A7"><span class="toc-text">主要属性</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -2873,8 +2869,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1636034387082')
-      volantis.js('/js/message.js?time=1636034387082', () => {
+      volantis.css('/css/message.css?time=1636034760443')
+      volantis.js('/js/message.js?time=1636034760443', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2919,8 +2915,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1636034387082')
-      volantis.js('/js/message.js?time=1636034387082', () => {
+      volantis.css('/css/message.css?time=1636034760443')
+      volantis.js('/js/message.js?time=1636034760443', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -2979,8 +2975,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1636034387082')
-      volantis.js('/js/message.js?time=1636034387082', () => {
+      volantis.css('/css/message.css?time=1636034760443')
+      volantis.js('/js/message.js?time=1636034760443', () => {
         hideMessage(done);
       });
     } else {
@@ -3135,7 +3131,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1636034387082')
+    volantis.js('/js/rightMenu.js?time=1636034760443')
   </script>
 
 
@@ -3248,19 +3244,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1636034387082")
+        volantis.js("/js/plugins/sites.js?time=1636034760443")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1636034387082")
+        volantis.js("/js/plugins/friends.js?time=1636034760443")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1636034387082")
+        volantis.js("/js/plugins/contributors.js?time=1636034760443")
       }
     
   };
@@ -3376,7 +3372,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1636034387082.js"></script>
+<script src="/js/app.js?time=1636034760443.js"></script>
 
 
 <!-- optional -->
@@ -3454,7 +3450,7 @@ volantis.pjax.push(bindToggleButton);
 
 
   <script>
-  let imgs = ["/img/0x24.jpg","/img/0x30.jpg","/img/0x22.jpg","/img/0x21.jpg","/img/0x29.jpg","/img/0x27.jpg","/img/0x28.jpg","/img/0x26.jpg","/img/0x25.jpg","/img/0x23.jpg"];
+  let imgs = ["/img/0x30.jpg","/img/0x27.jpg","/img/0x24.jpg","/img/0x23.jpg","/img/0x26.jpg","/img/0x28.jpg","/img/0x22.jpg","/img/0x25.jpg","/img/0x21.jpg","/img/0x29.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -3497,7 +3493,7 @@ volantis.pjax.push(bindToggleButton);
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/parallax.js?time=1636034387082').then(()=>{
+    volantis.js('/js/parallax.js?time=1636034760443').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -3745,7 +3741,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Captt-g","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Captt-g","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Captt-g"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/前端/","name":"前端"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021/11/03/计算机世界/CSS/","name":"CSS基础"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"CSS基础","description":"","datePublished":"2021-11-03T14:27:04.895Z","dateModified":"2021-11-04T13:59:33.361Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/11/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C/CSS/"},"author":{"@type":"Person","name":"Captt-g","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Captt-g","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021/11/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C/CSS/","wordCount":0,"articleSection":"前端","keywords":"CSS","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Captt-g","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Captt-g","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Captt-g"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/前端/","name":"前端"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021/11/03/计算机世界/CSS/","name":"CSS基础"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"CSS基础","description":"","datePublished":"2021-11-03T14:27:04.895Z","dateModified":"2021-11-04T14:05:47.806Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/11/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C/CSS/"},"author":{"@type":"Person","name":"Captt-g","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Captt-g","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021/11/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C/CSS/","wordCount":0,"articleSection":"前端","keywords":"CSS","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
