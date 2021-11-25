@@ -20,7 +20,7 @@
   <meta content="Captt-g" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1637754708515" as="style">
+  <link rel="preload" href="/css/style.css?time=1637808503416" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -36,7 +36,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-10-26T07:02:03.751Z">
-<meta property="article:modified_time" content="2021-10-26T13:08:54.228Z">
+<meta property="article:modified_time" content="2021-11-24T13:36:31.317Z">
 <meta property="article:author" content="Captt-g">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
@@ -1663,8 +1663,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1637754708515" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1637754708515"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1637808503416" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1637808503416"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2476,6 +2476,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <h2 id="287-Find-the-Duplicate-Number"><a href="#287-Find-the-Duplicate-Number" class="headerlink" title="287. Find the Duplicate Number"></a>287. Find the Duplicate Number</h2><div class="story post-story"><h3 id="题目大意："><a href="#题目大意：" class="headerlink" title="题目大意："></a>题目大意：</h3><p>给n+1个int值,1 &lt;= value &lt;= n,找出它们中的重复数字,时间复杂度为O(n^2),空间复杂度为O(1). </p>
 <h3 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h3><p>使用二分法,记数组最大值，中值，最小值分别为max，mid，low，如果小于mid的数超过mid个，则重复的数字小于mid，否则大于mid。重复此过程。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findDuplicate</span><span class="params">(<span class="keyword">int</span> *nums, <span class="keyword">int</span> numsSize)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> low = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> high = numsSize - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (low &lt; high)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = (low + high) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numsSize; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] &lt;= mid)</span><br><span class="line">            &#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (count &gt; mid)</span><br><span class="line">        &#123;</span><br><span class="line">            high = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            low = mid + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> low;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
 </div>
   </div>
   
@@ -2507,10 +2509,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-10-26T21:08:54+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-11-24T21:36:31+08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年10月26日</p>
+    <p>更新于：2021年11月24日</p>
   </a>
 </div>
 
@@ -2819,8 +2821,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1637754708515')
-      volantis.js('/js/message.js?time=1637754708515', () => {
+      volantis.css('/css/message.css?time=1637808503416')
+      volantis.js('/js/message.js?time=1637808503416', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2865,8 +2867,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1637754708515')
-      volantis.js('/js/message.js?time=1637754708515', () => {
+      volantis.css('/css/message.css?time=1637808503416')
+      volantis.js('/js/message.js?time=1637808503416', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -2925,8 +2927,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1637754708515')
-      volantis.js('/js/message.js?time=1637754708515', () => {
+      volantis.css('/css/message.css?time=1637808503416')
+      volantis.js('/js/message.js?time=1637808503416', () => {
         hideMessage(done);
       });
     } else {
@@ -3081,7 +3083,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1637754708515')
+    volantis.js('/js/rightMenu.js?time=1637808503416')
   </script>
 
 
@@ -3194,19 +3196,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1637754708515")
+        volantis.js("/js/plugins/sites.js?time=1637808503416")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1637754708515")
+        volantis.js("/js/plugins/friends.js?time=1637808503416")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1637754708515")
+        volantis.js("/js/plugins/contributors.js?time=1637808503416")
       }
     
   };
@@ -3322,7 +3324,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1637754708515.js"></script>
+<script src="/js/app.js?time=1637808503416.js"></script>
 
 
 <!-- optional -->
@@ -3400,7 +3402,7 @@ volantis.pjax.push(bindToggleButton);
 
 
   <script>
-  let imgs = ["/img/0x23.jpg","/img/0x22.jpg","/img/0x30.jpg","/img/0x27.jpg","/img/0x21.jpg","/img/0x25.jpg","/img/0x28.jpg","/img/0x29.jpg","/img/0x26.jpg","/img/0x24.jpg"];
+  let imgs = ["/img/0x23.jpg","/img/0x25.jpg","/img/0x21.jpg","/img/0x24.jpg","/img/0x30.jpg","/img/0x27.jpg","/img/0x26.jpg","/img/0x29.jpg","/img/0x28.jpg","/img/0x22.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -3443,7 +3445,7 @@ volantis.pjax.push(bindToggleButton);
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/parallax.js?time=1637754708515').then(()=>{
+    volantis.js('/js/parallax.js?time=1637808503416').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -3637,7 +3639,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Captt-g","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Captt-g","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Captt-g"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/算法/","name":"算法"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021/10/26/计算机世界/LeetCode/","name":"LeetCode刷题记录"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"LeetCode刷题记录","description":"","datePublished":"2021-10-26T07:02:03.751Z","dateModified":"2021-10-26T13:08:54.228Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/10/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C/LeetCode/"},"author":{"@type":"Person","name":"Captt-g","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Captt-g","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021/10/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C/LeetCode/","wordCount":0,"articleSection":"算法","keywords":"算法","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Captt-g","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Captt-g","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Captt-g"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/算法/","name":"算法"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021/10/26/计算机世界/LeetCode/","name":"LeetCode刷题记录"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"LeetCode刷题记录","description":"","datePublished":"2021-10-26T07:02:03.751Z","dateModified":"2021-11-24T13:36:31.317Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/10/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C/LeetCode/"},"author":{"@type":"Person","name":"Captt-g","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Captt-g","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021/10/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C/LeetCode/","wordCount":0,"articleSection":"算法","keywords":"算法","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->

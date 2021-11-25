@@ -20,7 +20,7 @@
   <meta content="Captt-g" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1637754708506" as="style">
+  <link rel="preload" href="/css/style.css?time=1637808503367" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -36,7 +36,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-11-24T09:58:00.443Z">
-<meta property="article:modified_time" content="2021-11-24T11:51:44.177Z">
+<meta property="article:modified_time" content="2021-11-25T02:48:11.330Z">
 <meta property="article:author" content="Captt-g">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
@@ -1663,8 +1663,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1637754708506" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1637754708506"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1637808503367" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1637808503367"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2474,8 +2474,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><div class="story post-story"><p>给一个字符串，找出字符串中最长的回文串</p>
-<h3 id="动态规划法"><a href="#动态规划法" class="headerlink" title="动态规划法"></a>动态规划法</h3><pre><code>dp[i][j]用于表示第i到第j个字符的字符串是否是回文串，因为一个回文串去掉首尾字符还是一个回文串，所以dp[i][j]=(s[i]==s[j])&amp;&amp;(j-i&lt;3||dp[i+1][j-1]),当j-i=1的时候表示仅有两个字符，只用保证s[i]==s[j]就可以，当j-i=2的时候，表示一共三个字符，只用保证中间字符两边相同就可以，也是s[i]==s[j].
-</code></pre>
+<h3 id="动态规划法"><a href="#动态规划法" class="headerlink" title="动态规划法"></a>动态规划法</h3><p>dp[i][j]用于表示第i到第j个字符的字符串是否是回文串，因为一个回文串去掉首尾字符还是一个回文串，所以dp[i][j]=(s[i]==s[j])&amp;&amp;(j-i&lt;3||dp[i+1][j-1]),当j-i=1的时候表示仅有两个字符，只用保证s[i]==s[j]就可以，当j-i=2的时候，表示一共三个字符，只用保证中间字符两边相同就可以，也是s[i]==s[j].</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//answer.go</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">longestPalindrome</span><span class="params">(s <span class="keyword">string</span>)</span> <span class="title">string</span></span> &#123;</span><br><span class="line">	length :=<span class="built_in">len</span>(s)</span><br><span class="line">	res,dp:=<span class="string">&quot;&quot;</span>,<span class="built_in">make</span>([][]<span class="keyword">bool</span>, length)</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; length; i++ &#123;</span><br><span class="line">		dp[i]=<span class="built_in">make</span>([]<span class="keyword">bool</span>,length)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> i:=length<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--&#123;</span><br><span class="line">		<span class="keyword">for</span> j:=i;j&lt;length;j++&#123;</span><br><span class="line">			dp[i][j]=(s[i]==s[j])&amp;&amp;(j-i&lt;<span class="number">3</span>||dp[i+<span class="number">1</span>][j<span class="number">-1</span>])</span><br><span class="line">			<span class="keyword">if</span> dp[i][j]&amp;&amp;(j-i+<span class="number">1</span>&gt;=<span class="built_in">len</span>(res)||res==<span class="string">&quot;&quot;</span>) &#123;</span><br><span class="line">				res=s[i:j+<span class="number">1</span>]</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h3 id="中心扩散法"><a href="#中心扩散法" class="headerlink" title="中心扩散法"></a>中心扩散法</h3><p>作为回文字符串有两种情况：</p>
 <ol>
@@ -2515,10 +2514,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-11-24T19:51:44+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-11-25T10:48:11+08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年11月24日</p>
+    <p>更新于：2021年11月25日</p>
   </a>
 </div>
 
@@ -2819,8 +2818,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1637754708506')
-      volantis.js('/js/message.js?time=1637754708506', () => {
+      volantis.css('/css/message.css?time=1637808503367')
+      volantis.js('/js/message.js?time=1637808503367', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2865,8 +2864,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1637754708506')
-      volantis.js('/js/message.js?time=1637754708506', () => {
+      volantis.css('/css/message.css?time=1637808503367')
+      volantis.js('/js/message.js?time=1637808503367', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -2925,8 +2924,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1637754708506')
-      volantis.js('/js/message.js?time=1637754708506', () => {
+      volantis.css('/css/message.css?time=1637808503367')
+      volantis.js('/js/message.js?time=1637808503367', () => {
         hideMessage(done);
       });
     } else {
@@ -3081,7 +3080,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1637754708506')
+    volantis.js('/js/rightMenu.js?time=1637808503367')
   </script>
 
 
@@ -3194,19 +3193,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1637754708506")
+        volantis.js("/js/plugins/sites.js?time=1637808503367")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1637754708506")
+        volantis.js("/js/plugins/friends.js?time=1637808503367")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1637754708506")
+        volantis.js("/js/plugins/contributors.js?time=1637808503367")
       }
     
   };
@@ -3322,7 +3321,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1637754708506.js"></script>
+<script src="/js/app.js?time=1637808503367.js"></script>
 
 
 <!-- optional -->
@@ -3400,7 +3399,7 @@ volantis.pjax.push(bindToggleButton);
 
 
   <script>
-  let imgs = ["/img/0x23.jpg","/img/0x30.jpg","/img/0x25.jpg","/img/0x22.jpg","/img/0x29.jpg","/img/0x21.jpg","/img/0x27.jpg","/img/0x26.jpg","/img/0x24.jpg","/img/0x28.jpg"];
+  let imgs = ["/img/0x25.jpg","/img/0x24.jpg","/img/0x22.jpg","/img/0x29.jpg","/img/0x28.jpg","/img/0x26.jpg","/img/0x30.jpg","/img/0x21.jpg","/img/0x27.jpg","/img/0x23.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -3443,7 +3442,7 @@ volantis.pjax.push(bindToggleButton);
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/parallax.js?time=1637754708506').then(()=>{
+    volantis.js('/js/parallax.js?time=1637808503367').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -3637,7 +3636,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Captt-g","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Captt-g","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Captt-g"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/算法/","name":"算法"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021/11/24/计算机世界/LongestPalind/","name":"5.Longest Palind romeSubstr"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"5.Longest Palind romeSubstr","description":"","datePublished":"2021-11-24T09:58:00.443Z","dateModified":"2021-11-24T11:51:44.177Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C/LongestPalind/"},"author":{"@type":"Person","name":"Captt-g","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Captt-g","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C/LongestPalind/","wordCount":0,"articleSection":"算法","keywords":"算法","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Captt-g","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Captt-g","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Captt-g"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/算法/","name":"算法"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021/11/24/计算机世界/LongestPalind/","name":"5.Longest Palind romeSubstr"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"5.Longest Palind romeSubstr","description":"","datePublished":"2021-11-24T09:58:00.443Z","dateModified":"2021-11-25T02:48:11.330Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C/LongestPalind/"},"author":{"@type":"Person","name":"Captt-g","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Captt-g","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C/LongestPalind/","wordCount":0,"articleSection":"算法","keywords":"算法","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
